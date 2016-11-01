@@ -136,10 +136,10 @@ func (d *DigestHeaders) Auth(username string, password string, uri string) (*Dig
 		if err != nil {
 			log.Fatal(err)
 		}
-		if resp.StatusCode != 200 {
-			d = &DigestHeaders{}
-			err = fmt.Errorf("response status code was %v", resp.StatusCode)
-		}
+		// if resp.StatusCode != 200 {
+		// 	d = &DigestHeaders{}
+		// 	err = fmt.Errorf("response status code was %v", resp.StatusCode)
+		// }
 		return d, err
 	}
 	return nil, fmt.Errorf("response status code should have been 401, it was %v", resp.StatusCode)
