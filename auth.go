@@ -104,11 +104,13 @@ func (d *DigestHeaders) Auth(username string, password string, uri string) (*Dig
 
 	req, err := http.NewRequest("GET", uri, nil)
 	if err != nil {
-		log.Fatal(err)
+		// log.Fatal(err)
+		return
 	}
 	resp, err := client.Do(req)
 	if err != nil {
-		log.Fatal(err)
+		// log.Fatal(err)
+		return
 	}
 	if resp.StatusCode == 401 {
 
